@@ -6,10 +6,8 @@ Input: Company Name
 Output: Domain of the company
 
 Examples:
-1) Microsoft
-    microsoft.com
-2) Split an Atom
-    splitanatom.com
+1) Microsoft: microsoft.com
+2) Split an Atom: splitanatom.com
 
 
 
