@@ -1,4 +1,4 @@
-# siftery-project
+# project-domain_prediction
 
 Simple tool to predict domain names of companies.
 
