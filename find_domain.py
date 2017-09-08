@@ -1,4 +1,4 @@
-# A simple trick to predict domain of compant from the streamed twitter feeds.
+# A simple trick to predict domain of company from the streamed twitter feeds.
 # 
 # Example:
 #  > Company: microsoft
