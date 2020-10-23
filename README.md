@@ -3,6 +3,7 @@
 Simple tool to predict domain names of companies.
 
 Input: Company Name
+
 Output: Domain of the company
 
 Examples:
