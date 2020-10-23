@@ -4,27 +4,50 @@
 # 
 # Example:
 #  > Company: microsoft
-#  > Domains: com, edu, in, io, ...
-#  > Stream twitter feeds. Filter the stream via company name, i.e., "microsoft" -> microsoft_twitter_stream.py
+#  > Domains: com, edu, in, etc.
+#  > Stream twitter feeds. Filter the stream via company name, i.e., "microsoft" -> twitter_microsoft_stream.py
 #  > Look for  the different domains in the feeds, i.e., search for ".com", ".edu", etc.
 #  > The domain with maximum count wins!
 #
 # @author anshulrao
 #
+from get_top_urls import crawl_google
+from stream_twitter_feeds import dump_stream_feeds
 
-DOMAIN_COUNT = 3
-f = open("../data/microsoft_twitter_stream.txt", "r")
-count = [0] * DOMAIN_COUNT
-domains = [".com", ".edu", ".io"]
-maximum = 0
-index = 0
-for line in f:
-    for i in range(DOMAIN_COUNT):
-        if domains[i] in str(line):
-            count[i] = count[i] + 1
-            if maximum < count[i]:
-                maximum = count[i]
-                index = i
+import sys
 
-print("microsoft%s" % domains[index])
-f.close()
+"""
+> python3 find_domain.py amazon
+Top domains obtained by crawling Google:  {'www.amazon.com', 'www.aboutamazon.com',
+                                           'www.amazon.in', 'www.primevideo.com'}
+Domain Prediction: amazon.com
+
+
+"""
+
+
+def main():
+    """
+    The main function
+
+    """
+    company = sys.argv[1]
+    dump_stream_feeds(company)
+    f = open(f"../data/twitter_{company}_stream.txt", "r")
+
+    # the list is not exhaustive and has only common ones for now
+    suffixes = [".com", ".edu", ".org", ".net", ".gov"]
+    count = [0] * len(suffixes)
+
+    for line in f:
+        for i, suffix in enumerate(suffixes):
+            if suffix in str(line):
+                count[i] += count[i]
+
+    print("Top domains obtained by crawling Google: ", crawl_google(company))
+    print(f"Domain Prediction: {company}{suffixes[count.index(max(count))]}")
+    f.close()
+
+
+if __name__ == "__main__":
+    main()
