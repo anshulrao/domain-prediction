@@ -12,11 +12,10 @@ from tweepy import Stream
 import time
 
 # user credentials to access Twitter API
-# below entries aer bogus since the real ones are confidential.
-access_token = "2238719426-q1TcqfS9FCpkclFWMrR0OEHKKAfdgdfvwqvL"
-access_token_secret = "qVjXKNXVKVx3bY4paSlRIEurasaPUJwB56SdRQ7G"
-consumer_key = "3nx4HvvQ3a4luiolhKedHpmuEh"
-consumer_secret = "ViSxTWY9ffWe9HgLWMkn2RsMgdfgd57JLmFbEaTHKcGOKIT"
+access_token = ""
+access_token_secret = ""
+consumer_key = ""
+consumer_secret = ""
 
 """
 > python3 stream_twitter_feeds.py

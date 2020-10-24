@@ -22,7 +22,6 @@ Top domains obtained by crawling Google:  {'www.amazon.com', 'www.aboutamazon.co
                                            'www.amazon.in', 'www.primevideo.com'}
 Domain Prediction: amazon.com
 
-
 """
 
 
