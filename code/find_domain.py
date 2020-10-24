@@ -44,7 +44,7 @@ def main():
                 count[i] += count[i]
 
     print("Top domains obtained by crawling Google: ", crawl_google(company))
-    print(f"Domain Prediction: {company}{suffixes[count.index(max(count))]}")
+    print(f"Domain predicted (using twitter streams): {company}{suffixes[count.index(max(count))]}")
     f.close()
 
 
